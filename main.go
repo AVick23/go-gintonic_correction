@@ -18,8 +18,8 @@ func main() {
 	// Создаем роутер для группы маршрутов /api
 	router := gnt.NewRouter(eng.Group("/api"))
 
-	// Добавляем маршрут POST /get
-	router.Post("/get", ping, gnt.RouteInfo{
+	// Исправляем маршрут POST с /get на /post
+	router.Post("/post", ping, gnt.RouteInfo{
 		Tags:        []string{"Test"},
 		Title:       "Route Title",
 		Description: "Route Description",
@@ -49,7 +49,7 @@ func main() {
 	eng.Run(":8080")
 }
 
-// Обработчик для POST /get
+// Обработчик для POST не /get а /post
 func ping(c *gin.Context, data Resp) *Resp {
 	return &Resp{Code: data.Code + 1, Msg: data.Msg + " modified"}
 }
