@@ -1,0 +1,102 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "",
+    "description": "",
+    "version": ""
+  },
+  "paths": {
+    "/api/get": {
+      "post": {
+        "tags": [
+          "Test"
+        ],
+        "summary": "Route Title",
+        "description": "Route Description",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Resp"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Resp",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Resp"
+                }
+              }
+            }
+          }
+        },
+        "security": null
+      }
+    },
+    "/api/test": {
+      "get": {
+        "tags": [
+          "Test",
+          "First"
+        ],
+        "summary": "Route Title",
+        "description": "Route Description",
+        "responses": {
+          "200": {
+            "description": "ExampleResponse",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExampleResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": null
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ExampleRequest": {
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "ExampleResponse": {
+        "properties": {
+          "msg": {
+            "type": "string"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "Resp": {
+        "properties": {
+          "code": {
+            "type": "integer"
+          },
+          "msg": {
+            "type": "string"
+          }
+        },
+        "required": [],
+        "type": "object"
+      }
+    },
+    "securitySchemes": null
+  }
+}
